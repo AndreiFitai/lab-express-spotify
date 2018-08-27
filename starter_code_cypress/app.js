@@ -14,10 +14,10 @@ const spotifyApi = new SpotifyWebApi({
 
 // Retrieve an access token.
 spotifyApi.clientCredentialsGrant().then(
-  function(data) {
+  function (data) {
     spotifyApi.setAccessToken(data.body["access_token"]);
   },
-  function(err) {
+  function (err) {
     console.log("Something went wrong when retrieving an access token", err);
   }
 );
@@ -37,13 +37,37 @@ app.get("/artists", (req, res, next) => {
     .searchArtists(query)
     .then(data => {
       data = data.body.artists.items;
-      console.log(data[0].images[0].url);
-      res.render("artists", { data });
-      // res.send(data);
+      res.render("artists", {
+        data
+      });
     })
     .catch(err => {
       console.error(err);
     });
+});
+
+app.get('/albums/:artistId', (req, res) => {
+  const query = req.params.artistId;
+  spotifyApi
+    .getArtistAlbums(query)
+    .then(data => {
+      albums = data.body.items;
+      res.render("albums", {
+        albums
+      });
+    })
+});
+
+app.get('/tracks/:albumId', (req, res) => {
+  const query = req.params.albumId;
+  spotifyApi
+    .getAlbumTracks(query)
+    .then(data => {
+      tracks = data.body.items;
+      res.render("tracks", {
+        tracks
+      });
+    })
 });
 
 app.listen(3000, () => {

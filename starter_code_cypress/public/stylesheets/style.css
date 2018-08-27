@@ -1,5 +1,8 @@
 body {
   margin: 0;
+}
+
+header {
   background: url("../images/background.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -42,4 +45,44 @@ input {
   background: #ffffff;
   color: #ff5e6b;
   border: #ff5e6b 1px solid;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.card {
+  margin: 20px
+}
+
+.card-body {
+  background: #4E4E4E;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.btn-primary {
+  background: #ff5e6b;
+  border: 1px #ff5e6b solid;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.albums-header {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.tracks-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.track {
+  display: flex;
+  flex-flow: row nowrap;
 }
