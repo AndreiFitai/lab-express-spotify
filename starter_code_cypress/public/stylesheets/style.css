@@ -54,11 +54,11 @@ input {
 }
 
 .card {
-  margin: 20px
+  margin: 20px;
 }
 
 .card-body {
-  background: #4E4E4E;
+  background: #4e4e4e;
   color: white;
   display: flex;
   flex-flow: column nowrap;
@@ -77,12 +77,23 @@ input {
   text-align: center;
 }
 
+.general-container {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 .tracks-container {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 .track {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
+  background: #f6f6f6;
+  height: 70px;
+  margin: 5px 0;
+  padding: 5px;
 }

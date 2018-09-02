@@ -1,7 +1,9 @@
-<nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1">Title</span>
-  <span class="navbar-brand mb-0 h1">Listen</span>
-</nav>
-<div class="tracks-container">
-  {{#each tracks}} {{> trackPartial this}} {{/each}}
+<div class="general-container">
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Title</span>
+    <span class="navbar-brand mb-0 h1">Listen</span>
+  </nav>
+  <div class="tracks-container">
+    {{#each tracks}} {{> trackPartial this}} {{/each}}
+  </div>
 </div>
